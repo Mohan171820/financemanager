@@ -20,7 +20,7 @@ public class CategoriesService {
     public List<Category> getCategories() {
         return categoryRepository.findAll();
     }
-                                                        // logic to get the details of a particular categories by id
+                                                        // logic to get the details of a particular categories by is
     public Category getCategoriesById(Integer id) {
         return categoryRepository.findById(id).get();
     }

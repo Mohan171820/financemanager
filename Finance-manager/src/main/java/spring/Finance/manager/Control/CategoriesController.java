@@ -1,4 +1,6 @@
 package spring.Finance.manager.Control;
+
+import jakarta.persistence.GeneratedValue;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import spring.Finance.manager.Entity.Category;
