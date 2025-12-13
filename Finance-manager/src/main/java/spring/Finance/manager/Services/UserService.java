@@ -9,18 +9,24 @@ import java.util.List;
 
 @Service
 public class UserService {
+
     @Autowired
     private UserRepository userRepository;
 
-    public List<User> findAll() {
-        return userRepository.findAll();
-    }
-    public User getUserById(Integer id) {
-        return userRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("User not found"));
-    }
-    public void deleteUser(Integer id) {
-        userRepository.deleteById(id);
+    public User createUser(User user) {       // It connects to the repo and stores the details entered by user
+        return userRepository.save(user);
     }
 
+    public List<User> getAllUsers() {        // It brings all user details from the database by repository
+        return userRepository.findAll();
+    }
+
+    public User getUserById(Integer userid) {
+        return userRepository.findById(userid)
+                .orElseThrow(() -> new RuntimeException("User not found"));
+    }
+
+    public void deleteUser(Integer userid) {
+        userRepository.deleteById(userid);
+    }
 }
