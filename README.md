@@ -25,11 +25,16 @@ This project focuses on clean backend architecture, database design, and RESTful
 # TECH STACK 
 Java
 
-Springboot-API endpoints
+Springboot - Framework
 
 PostgresSql - Database
 
 Postman - API testing
+
+SpringDataJpa - ORM
+
+Maven - BuildTool
+
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # 🗄️ Database Design
  # User
