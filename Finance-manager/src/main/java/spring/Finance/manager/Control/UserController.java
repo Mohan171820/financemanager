@@ -18,7 +18,7 @@ public class UserController {
     };
 
     @GetMapping("/api/users")                                          // It is to get details of the user
-    public List<User> details(@RequestBody User user) {
+    public List<User> details() {
         return userRepository.findAll();
     };
 
