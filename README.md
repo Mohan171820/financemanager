@@ -21,7 +21,15 @@ This project focuses on clean backend architecture, database design, and RESTful
 🔁 RESTful APIs
 
 🧪 Tested using Postman
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# TECH STACK 
+Java
 
+Springboot-API endpoints
+
+PostgresSql - Database
+
+Postman - API testing
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # 🗄️ Database Design
  # User
