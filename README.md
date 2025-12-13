@@ -21,30 +21,7 @@ This project focuses on clean backend architecture, database design, and RESTful
 🔁 RESTful APIs
 
 🧪 Tested using Postman
------------------------------------------------------------------------------------------------------------------------------------------------------------------
-# 🛠️ Tech Stack
-Layer	                        Technology
-Language	                     Java
-Framework	                     Spring Boot
-ORM                         Spring Data JPA (Hibernate)
-Database	                     PostgreSQL
-Build Tool                   	 Maven
-API Testing	                     Postman
-------------------------------------------------------------------------------------------------------------------------------------------------------------------
- # 📂 Project Structure
-Finance-manager/
-├── src/main/java/spring/Finance/manager
-│   ├── Control        # REST Controllers
-│   ├── Entity         # JPA Entities
-│   ├── Repos          # JPA Repositories
-│   ├── Services       # Business Logic
-│   └── FinanceManagerApplication.java
-│
-├── src/main/resources
-│   └── application.properties
-│
-├── pom.xml
-└── README.md
+
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # 🗄️ Database Design
  # User
