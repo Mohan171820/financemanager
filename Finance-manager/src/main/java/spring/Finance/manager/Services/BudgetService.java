@@ -22,7 +22,7 @@ public class BudgetService {
     public Budget getBudgetById(int id){
         return budgetRepository.findById(id).get();
     }
-    public Budget updateBudget(Budget budget){
+    public Budget updateBudgetById(Budget budget){
         return budgetRepository.save(budget);
     }
     public void deleteBudget(int id){

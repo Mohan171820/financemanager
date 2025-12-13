@@ -29,9 +29,9 @@ public class BudgetController {
         return budgetService.getBudgetById(id);
     }
 
-    @PutMapping("/api/updateBudget")
-    public Budget updateBudget(@RequestBody Budget budget){
-        return budgetService.updateBudget(budget);
+    @PutMapping("/api/updateBudget/{id}")
+    public Budget updateBudgetById(@RequestBody Budget budget){
+        return budgetService.updateBudgetById(budget);
     }
     @DeleteMapping("/api/deleteBudget")
     public void deleteBudget(@RequestBody Budget budget){
