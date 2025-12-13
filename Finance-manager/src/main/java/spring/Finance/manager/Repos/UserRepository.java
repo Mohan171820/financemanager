@@ -6,4 +6,5 @@ import spring.Finance.manager.Entity.User;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Integer> {
+
 }
