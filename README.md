@@ -1,119 +1,133 @@
 # 💰 Finance Manager – Backend Application
 
-Finance Manager is a Spring Boot–based backend application designed to help users manage their income, expenses, categories, transactions, and budgets.
-This project focuses on clean backend architecture, database design, and RESTful APIs.
+Finance Manager is a Spring Boot–based backend application designed to help users systematically manage their personal finances. It provides structured APIs for handling income, expenses, categories, transactions, and budgets with a strong emphasis on clean architecture, database design, and maintainable business logic.
 
-⚠️ Note: Authentication & authorization (Spring Security / JWT) are intentionally excluded for now to focus on core business logic. 
-  They will be added in a future version.
------------------------------------------------------------------------------------------------------------------------------------------------------------------
- # 🚀 Features
+> ⚠️ **Note:** Authentication and authorization (Spring Security / JWT) are intentionally excluded in the current version to keep the focus on core business logic and domain modeling. Security will be integrated in a future release.
 
-👤 User management
+---
 
-🗂️ Category management (INCOME / EXPENSE)
+## 📌 Overview
 
-💸 Transaction tracking
+Managing personal finances is often challenging, especially for students and young professionals. Small, frequent expenses—such as food, travel, subscriptions, and shopping—are easy to overlook. Over time, these untracked expenses accumulate, making it difficult to understand spending habits or maintain a healthy budget.
 
-📊 Budget planning (monthly, category-based)
+Finance Manager addresses this problem by offering a centralized backend system that enables users to record, categorize, and analyze their financial data in a structured and reliable way. By exposing RESTful APIs, the application can be easily integrated with any frontend (web, mobile, or desktop).
 
-🛢️ PostgreSQL database integration
+---
 
-🔁 RESTful APIs
+## 🎯 Project Objectives
 
-🧪 Tested using Postman
-<<<<<<< HEAD
------------------------------------------------------------------------------------------------------------------------------------------------------------------
-# 🛠️ Tech Stack
-=======
--------------------------------------------------------------------------------------------------------------------------------------------------------------------
-# TECH STACK 
->>>>>>> 432f162b14bbcf22fd4b406d274c18ba5f093da6
-Java
+* Provide a structured backend for managing personal finance data
+* Enable accurate tracking of income and expenses
+* Support category-based and monthly budget planning
+* Promote clean backend architecture and separation of concerns
+* Offer extensible APIs for future feature growth
 
-Springboot - Framework
+---
 
-PostgresSql - Database
+## 🚀 Features
 
-Postman - API testing
+* 👤 User management
+* 🗂️ Category management (INCOME / EXPENSE)
+* 💸 Transaction tracking
+* 📊 Budget planning (monthly, category-based)
+* 🛢️ PostgreSQL database integration
+* 🔁 RESTful API design
+* 🧪 API testing using Postman
 
-SpringDataJpa - ORM
+---
 
-Maven - BuildTool
+## ⚙️ How the System Works
 
--------------------------------------------------------------------------------------------------------------------------------------------------------------------
-# 🗄️ Database Design
- # User
+1. Users are created and managed within the system.
+2. Each user defines categories for income and expenses (e.g., Salary, Food, Travel).
+3. Transactions are recorded under specific categories with amount, type, and date.
+4. Budgets can be configured per category on a monthly basis.
+5. The system tracks used amounts against budget limits to help analyze spending behavior.
 
-id (PK)
+All interactions are exposed via REST APIs, making the backend independent of any specific client application.
 
-email
+---
 
-password
+## 🛠️ Tech Stack
 
-full_name
+* **Java**
+* **Spring Boot** – Application framework
+* **Spring Data JPA** – ORM and data persistence
+* **PostgreSQL** – Relational database
+* **Maven** – Build and dependency management
+* **Postman** – API testing
 
-created_at
+---
 
-# Category
+## 🗄️ Database Design
 
-id (PK)
+### User
 
-name
+* `id` (PK)
+* `email`
+* `password`
+* `full_name`
+* `created_at`
 
-type (INCOME / EXPENSE)
+### Category
 
-user_id (FK)
+* `id` (PK)
+* `name`
+* `type` (INCOME / EXPENSE)
+* `user_id` (FK)
 
-# Transaction
+### Transaction
 
-id (PK)
+* `id` (PK)
+* `user_id` (FK)
+* `category_id` (FK)
+* `amount`
+* `type` (INCOME / EXPENSE)
+* `description`
+* `txn_date`
+* `created_at`
 
-user_id (FK)
+### Budget
 
-category_id (FK)
+* `id` (PK)
+* `user_id` (FK)
+* `category_id` (FK)
+* `amount_limit`
+* `month`
+* `year`
+* `used_amount`
 
-amount
+---
 
-type (INCOME / EXPENSE)
+## 🧩 Architectural Notes
 
-description
+* Follows layered architecture (Controller → Service → Repository)
+* DTOs can be introduced to decouple API contracts from entities
+* Business logic is isolated in service classes
+* Database schema is normalized for scalability and consistency
 
-txn_date
+---
 
-created_at
+## 🚀 Future Enhancements
 
-# Budget
+* Authentication & authorization using Spring Security and JWT
+* Advanced financial analytics and reports
+* Recurring transactions support
+* Export data to CSV or Excel
+* Frontend integration (Web / Mobile)
 
-id (PK)
+---
 
-user_id (FK)
+## 👨‍💻 Developer Notes
 
-category_id (FK)
+* **Project Name:** Finance Manager
+* **Type:** Backend Application
+* **Framework:** Spring Boot
+* **Database:** PostgreSQL
+* **Purpose:** Structured and scalable backend for personal finance management
 
-amount_limit
+---
 
-month
+## 📄 License
 
-year
-
-used_amount
--------------------------------------------------------------------------------------------------------------------------------------------------------------------
-# FINANCE MANAGER 
-In day-to-day life, managing personal finances is difficult, especially for students and young professionals.
-Many people spend money on small daily expenses such as food, travel, shopping, and subscriptions without properly tracking them. Over time, these untracked expenses accumulate, making it hard to understand where money is being spent and why savings are reducing.
-
-I personally faced this problem, as I noticed that I was spending more money outside without a clear understanding of my expenses. Without a proper system to record income and expenses, it became difficult to analyze spending habits, control unnecessary expenses, and maintain a balanced budget.
-
-Most people either rely on memory or use unstructured methods like notes, which are inefficient and error-prone. There is a need for a simple and organized solution that allows users to record their income and expenses, view summaries, and understand their financial behavior.
-
-The Finance Manager application is created to solve this problem by providing a centralized platform where users can:
-
-Record income and expenses
-
-Categorize spending
-
-View total income, total expenses, and remaining balance
-
-Analyze spending patterns over time
-
-This helps users make better financial decisions, reduce unnecessary spending, and develop better money management habits.
+This project is intended for educational and personal use. Licensing can be added as per future distribution requirements.
